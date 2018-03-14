@@ -1,0 +1,501 @@
+WikidataID,WikidataName,ReconCount
+Q13442814,scientific article,210
+Q482994,album,116
+Q11424,film,97
+Q571,book,86
+Q3305213,painting,52
+Q5633421,scientific journal,47
+Q134556,single,46
+Q215380,band,37
+Q5,human,33
+Q4830453,business enterprise,29
+Q21191270,TV series episode,26
+Q7366,song,23
+Q43229,organization,20
+Q5398426,television series,18
+Q41298,magazine,15
+Q7889,video game,15
+Q3624078,sovereign state,14
+Q3918,university,13
+Q7278,political party,13
+Q23002039,public educational institution of the United States,12
+Q838795,comic strip,12
+Q101352,family name,11
+Q160016,member state of the United Nations,10
+Q6256,country,10
+Q12136,disease,9
+Q14934048,political ideology,9
+Q737498,academic journal,9
+Q7725634,literary work,9
+Q11862829,academic discipline,8
+Q163740,nonprofit organization,8
+Q25379,play,8
+Q860861,sculpture,8
+Q10855242,race horse,7
+Q506240,television film,7
+Q515,city,7
+Q7058673,video game series,7
+Q7397,software,7
+Q1002697,periodical literature,6
+Q169930,extended play,6
+Q226730,silent film,6
+Q28640,profession,6
+Q327333,government agency,6
+Q35127,website,6
+Q11446,ship,5
+Q16521,taxon,5
+Q17343829,unincorporated community,5
+Q178790,trade union,5
+Q19389637,biographical article,5
+Q201658,film genre,5
+Q3024240,historical country,5
+Q41710,ethnic group,5
+Q532,village,5
+Q79007,street,5
+Q1110794,daily newspaper,4
+Q1259759,miniseries,4
+Q151885,concept,4
+Q157031,foundation,4
+Q1762059,film production company,4
+Q19692072,United States Supreme Court decision,4
+Q20202269,music term,4
+Q209939,live album,4
+Q23002054,private not-for-profit educational institution,4
+Q2996394,biological process,4
+Q3220391,social networking service,4
+Q3331189,edition,4
+Q3863,asteroid,4
+Q431603,advocacy group,4
+Q476068,Act of Congress,4
+Q484652,international organization,4
+Q486972,human settlement,4
+Q5185279,poem,4
+Q615150,land-grant institution,4
+Q82794,geographic region,4
+Q875538,public university,4
+Q891723,public company,4
+Q11173,chemical compound,3
+Q12737077,occupation,3
+Q131569,treaty,3
+Q15127012,town of the United States,3
+Q15416,television program,3
+Q15936437,research university,3
+Q1616075,television station,3
+Q17524420,aspect of history,3
+Q1752939,independent agency of the United States government,3
+Q17737,theory,3
+Q17888,sexual orientation,3
+Q191067,article,3
+Q198,war,3
+Q20667187,silent short film,3
+Q207628,musical composition,3
+Q210826,thoroughbred,3
+Q222910,compilation album,3
+Q2334719,legal case,3
+Q2465832,branch of science,3
+Q253019,Quarter,3
+Q35657,state of the United States,3
+Q43702,federation,3
+Q48204,association,3
+Q49084,short story,3
+Q561068,specialty channel,3
+Q6505795,member state of the Council of Europe,3
+Q7187,gene,3
+Q7270,republic,3
+Q79913,non-governmental organization,3
+Q8054,protein,3
+Q8187769,economic activity,3
+Q1093829,city of the United States,2
+Q11032,newspaper,2
+Q1107679,animation studio,2
+Q1110684,professional association,2
+Q11514315,historical period,2
+Q11879590,female given name,2
+Q12140,pharmaceutical drug,2
+Q12308941,male given name,2
+Q123705,neighborhood,2
+Q125191,photograph,2
+Q131436,board game,2
+Q1320047,book publishing company,2
+Q13414953,religious denomination,2
+Q14296,top-level domain,2
+Q14623646,fictional organization,2
+Q15141321,train service,2
+Q1520223,constitutional republic,2
+Q152081,concentration camp,2
+Q15632617,fictional human,2
+Q1620945,historically black colleges and universities,2
+Q1641112,social formation,2
+Q17412622,car marque,2
+Q17537576,creative work,2
+Q179164,unitary state,2
+Q179805,political philosophy,2
+Q18127,record label,2
+Q187685,doctoral thesis,2
+Q188509,suburb,2
+Q1914636,activity,2
+Q192283,news agency,2
+Q202444,given name,2
+Q207174,personification,2
+Q20971972,Original Public Ivy,2
+Q210167,video game developer,2
+Q22302160,descriptive item used as unit,2
+Q223393,literary genre,2
+Q23397,lake,2
+Q235557,file format,2
+Q24862,short film,2
+Q3026037,Platonic dialogue,2
+Q3249551,process,2
+Q3254959,race,2
+Q3326717,literary movement,2
+Q33506,museum,2
+Q35760,essay,2
+Q386724,work,2
+Q3957,town,2
+Q4022,river,2
+Q41253,movie theater,2
+Q47913,intelligence agency,2
+Q483394,genre,2
+Q49371,legislation,2
+Q49447,world view,2
+Q498162,census-designated place,2
+Q5255892,democratic republic,2
+Q5741069,rock band,2
+Q581714,animated series,2
+Q618779,award,2
+Q62049,county seat,2
+Q6517465,legal bibliography,2
+Q659563,video game genre,2
+Q6688521,permanent member of the United Nations Security Council,2
+Q6979593,national association football team,2
+Q7257,ideology,2
+Q8261,novel,2
+Q8274,manga,2
+Q848944,merchant vessel,2
+Q8502,mountain,2
+Q853614,identifier,2
+Q902104,private university,2
+Q9174,religion,2
+Q928830,metro station,2
+Q9415,emotion,2
+Q9465,ethics,2
+Q1006311,war of national liberation,1
+Q1007311,Bundestag committee,1
+Q1017546,districts and neighborhoods of Los Angeles,1
+Q1021128,community action group,1
+Q103495,world war,1
+Q1047113,specialty,1
+Q1061197,radio network,1
+Q1075106,state university system,1
+Q1094617,mutant,1
+Q1107,anime,1
+Q11086742,television anime,1
+Q1114461,comic character,1
+Q1115575,civil parish,1
+Q112099,island nation,1
+Q1129645,trade bloc,1
+Q11315,shopping mall,1
+Q1137109,video game publisher,1
+Q11396960,production company,1
+Q11422631,United Nations Depository Library,1
+Q1142281,national personification,1
+Q1144661,amusement ride,1
+Q1153191,online newspaper,1
+Q1156854,policy,1
+Q117850,doctrine,1
+Q1188663,Colonial Colleges,1
+Q1192543,legal doctrine,1
+Q1194970,dot-com company,1
+Q123480,landlocked country,1
+Q124757,riot,1
+Q1248784,airport,1
+Q1252971,food maker,1
+Q1261214,television special,1
+Q1262438,international court,1
+Q126351,Autobot,1
+Q127933,firework,1
+Q12813215,labour ministry,1
+Q128234,case,1
+Q1292119,style,1
+Q13027888,baseball team,1
+Q13107770,Archipelagic state,1
+Q131093,content management system,1
+Q13212489,county of California,1
+Q1326430,social contract,1
+Q1330251,United Nations General Assembly resolution,1
+Q1330336,web framework,1
+Q13406554,sport competition,1
+Q134161,joint-stock company,1
+Q1348589,lunar crater,1
+Q13593966,literary trilogy,1
+Q1368848,literary magazine,1
+Q13723070,local history society,1
+Q14350,radio station,1
+Q1438105,Research reactor,1
+Q14406742,comic book series,1
+Q149069,bottlenose dolphin,1
+Q1493752,day school,1
+Q1496857,prayer book,1
+Q1496967,territorial entity,1
+Q14978,icebreaker,1
+Q15056993,aircraft family,1
+Q15063611,city,1
+Q1520214,reappropriation,1
+Q15265344,broadcaster,1
+Q155271,think tank,1
+Q1555508,radio program,1
+Q15617994,designation for an administrative territorial entity,1
+Q15631336,protest march,1
+Q15690029,fictional educational institution,1
+Q15727816,painting series,1
+Q15831596,class of fictional entities,1
+Q15841920,Redewendung,1
+Q15899789,principal organ of the United Nations,1
+Q15911314,association,1
+Q15921300,sector of Bucharest,1
+Q15991303,national association football league,1
+Q161726,multinational corporation,1
+Q162378,grammatical gender,1
+Q16334295,group of humans,1
+Q16335296,historical profession,1
+Q1637706,city with millions of inhabitants,1
+Q16512470,rules,1
+Q16567729,Council of Europe treaty,1
+Q1667921,novel series,1
+Q1668049,internment,1
+Q1679887,student protest,1
+Q1684600,news magazine,1
+Q16874643,legal term,1
+Q16895642,philosophical school,1
+Q1709894,journalism prize,1
+Q173253,sense,1
+Q17329259,encyclopedic article,1
+Q17366755,hamlet in Alberta,1
+Q174705,oil painting,1
+Q174844,megacity,1
+Q175331,demonstration,1
+Q1758690,municipal police,1
+Q176799,military unit,1
+Q1781513,position,1
+Q178706,institution,1
+Q1789476,bibliographic database,1
+Q179461,religious text,1
+Q179700,statue,1
+Q180684,conflict,1
+Q1810858,blog software,1
+Q18343316,standard UNIX utility,1
+Q183816,master's degree,1
+Q185357,phase change,1
+Q185441,member state of the European Union,1
+Q185836,age,1
+Q1865205,bar association,1
+Q188451,music genre,1
+Q188784,superhero,1
+Q189004,college,1
+Q1896989,subject of international law,1
+Q189819,ritual,1
+Q1920785,Human resources,1
+Q192611,constituency,1
+Q193934,paperback,1
+Q194203,arrondissement of France,1
+Q196600,media franchise,1
+Q1969448,term,1
+Q1983062,episode,1
+Q19832479,vessel class,1
+Q2001305,television channel,1
+Q20074337,auto racing team,1
+Q202539,brig,1
+Q20437094,installation,1
+Q204577,schooner,1
+Q204832,roller coaster,1
+Q2057971,health problem,1
+Q205961,skill,1
+Q205985,goddess,1
+Q206361,concern,1
+Q20671381,album series,1
+Q2085381,publisher,1
+Q208569,studio album,1
+Q20857065,United States federal agency,1
+Q20858006,federal law enforcement agency of the United States,1
+Q20937557,series,1
+Q21009055,Class IB flammable liquid,1
+Q21009057,Class II combustible liquid,1
+Q21104425,specialized agency of the United Nations,1
+Q21191068,Philippine TV series,1
+Q2135465,legal concept,1
+Q217295,mass,1
+Q2198855,cultural movement,1
+Q223371,stock market index,1
+Q22698,park,1
+Q22811234,branch of philosophy,1
+Q22908314,rhetorical mode,1
+Q229390,3D film,1
+Q22989102,Greek deity,1
+Q23010647,suburb of Perth,1
+Q2305441,Sozialer Prozess,1
+Q2312410,sport discipline,1
+Q2325086,state model,1
+Q233324,seminary,1
+Q23442,island,1
+Q23702035,former liberal party,1
+Q2389789,steel roller coaster,1
+Q2399626,technopole,1
+Q2401749,telecommunication company,1
+Q24034552,mathematical concept,1
+Q24334893,mythical place,1
+Q245065,intergovernmental organization,1
+Q24856,film series,1
+Q252550,trade agreement,1
+Q26208318,horse riding technique,1
+Q26211545,desa,1
+Q264965,subculture,1
+Q26705556,human life stage,1
+Q269770,boarding school,1
+Q27043990,Lego theme,1
+Q271680,software framework,1
+Q2721136,image hosting service,1
+Q273005,economic system,1
+Q2738074,political movement,1
+Q2743,musical,1
+Q2775969,fictional planet,1
+Q277759,book series,1
+Q27907094,Loss Of Function Variant,1
+Q27949287,polar protic solvent,1
+Q28050776,kingdom,1
+Q28108,political system,1
+Q28816538,aircraft component,1
+Q290,sex,1
+Q2915955,philosophical movement,1
+Q29168811,animated feature film,1
+Q29469,generic top-level domain,1
+Q3048444,school of economic thought,1
+Q3062294,Latin phrase,1
+Q308857,misogyny,1
+Q31172650,moral quality,1
+Q3117863,isolated human group,1
+Q31855,research institute,1
+Q3238445,security agency,1
+Q3238833,independent school,1
+Q3244038,Établissement public à caractère administratif,1
+Q3257686,locality,1
+Q326124,directive of EU,1
+Q327496,hairstyle,1
+Q3276983,cruiseferry,1
+Q328468,Nazi concentration camp,1
+Q32880,architectural style,1
+Q3301053,consolidated city-county,1
+Q33104069,political concept,1
+Q33104129,sociological concept,1
+Q3327913,Summer Paralympic Games,1
+Q3409027,compound given name,1
+Q3409032,unisex given name,1
+Q341,free software,1
+Q34262376,national association football cup,1
+Q34627,synagogue,1
+Q3464665,TV series season,1
+Q34651,Christian Church,1
+Q34770,language,1
+Q3512806,Unicode block,1
+Q352102,journalism school,1
+Q3559093,Sanctuary city,1
+Q3565868,rail transport,1
+Q35749,parliament,1
+Q36279,biography,1
+Q37002670,unicameral legislature,1
+Q37726,army,1
+Q380093,film school,1
+Q38926,news,1
+Q39032834,anime series episode,1
+Q3922050,scientific principle,1
+Q3947,house,1
+Q39804,cruise ship,1
+Q39834914,sports statistics website,1
+Q40050,drink,1
+Q41064,Psalms,1
+Q41176,building,1
+Q414147,Academy of sciences,1
+Q41614,constitutional monarchy,1
+Q4162444,branch of physics,1
+Q4209223,legal state,1
+Q42193353,relational algebra operation,1
+Q4220917,film award,1
+Q43577,cat breed,1
+Q4358176,council,1
+Q4392985,religious identity,1
+Q44,beer,1
+Q4438121,sports organization,1
+Q45400320,open-access publisher,1
+Q465299,archaeological culture,1
+Q4677783,Act of Parliament of the United Kingdom,1
+Q46831,mountain range,1
+Q47280,Abrahamic religion,1
+Q476028,association football team,1
+Q479716,university press,1
+Q47988,identity document,1
+Q488094,leadlight,1
+Q4915012,biological pathway,1
+Q49773,social movement,1
+Q497893,literary society,1
+Q5001853,business channel,1
+Q50053,binary star,1
+Q502895,common name,1
+Q507619,chain store,1
+Q5119,capital,1
+Q5260216,Department of Corrections,1
+Q526334,union catalog,1
+Q526877,web series,1
+Q5389993,philosophical theory,1
+Q5508804,functional constituency of Hong Kong,1
+Q559856,video hosting service,1
+Q5707594,news article,1
+Q58854,literary criticism,1
+Q591990,jazz standard,1
+Q618123,geographical object,1
+Q627517,history journal,1
+Q628993,district of the canton of Valais,1
+Q6428674,era,1
+Q6498903,supervillain,1
+Q657596,unary operation,1
+Q6647660,literary element,1
+Q670732,religious law,1
+Q697196,ocean liner,1
+Q708676,charitable organization,1
+Q7188,government,1
+Q7189713,physiological condition,1
+Q7241458,presidential proclamation (US),1
+Q725377,graphic novel,1
+Q7275,state,1
+Q7302866,music track,1
+Q735478,newsreel,1
+Q74047,ghost town,1
+Q746654,law review,1
+Q751708,village in the United States,1
+Q7617886,Stock control,1
+Q772547,armed forces,1
+Q7755,constitution,1
+Q786820,automobile manufacturer,1
+Q787457,Garden leave,1
+Q7892363,United States cable news,1
+Q8076,video game console,1
+Q820655,statute,1
+Q82799,name,1
+Q838368,black-and-white,1
+Q8458,human rights,1
+Q848197,parliamentary group,1
+Q856584,library building,1
+Q861911,speech,1
+Q87167,manuscript,1
+Q901711,colloquialism,1
+Q902814,border town,1
+Q910252,United States federal executive department,1
+Q9135,operating system,1
+Q920890,mobile operating system,1
+Q921259,Brixham trawler,1
+Q93184,drawing,1
+Q934744,political scandal,1
+Q938438,statistical inference,1
+Q95074,fictional character,1
+Q963908,Private Hochschule,1
+Q968159,art movement,1
+Q9826,high school,1
+Q989888,Starship Enterprise,1
