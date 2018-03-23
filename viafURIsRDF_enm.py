@@ -100,7 +100,7 @@ with open ("important_topics_to_enrich_2017_12_20_03_14_PM_cleaned-tsv_ORexport_
 					#print(shorttopictype)
 					#put the list into the dictionary as the key-value for topic type
 					URIdict["external_link"]["recon_data"]["topic_type"] = shorttopictypelist
-
+					#would like to add a counter here to count how many topics will have at least one type added
 				#not doing this, but this was how I got VIAF names before
 # 				# viafnameslist = []
 
@@ -129,6 +129,7 @@ with open ("important_topics_to_enrich_2017_12_20_03_14_PM_cleaned-tsv_ORexport_
 				#the URI dict is a record for each topic record to be enriched
 				print(URIdict)
 				URIdictlist.append(URIdict)
+				#would like to add a counter here to report how many topics are being enriched. should match number of URIs found
 
 # # name = g.value(None, SKOS.prefLabel, any=True)
 # # print(name)
