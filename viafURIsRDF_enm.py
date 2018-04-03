@@ -5,25 +5,27 @@ from rdflib import URIRef
 from rdflib import Namespace
 from rdflib.namespace import SKOS, RDFS, RDF
 
+# to do: timer for how long script takes
+
 #from collections import Counter
 
 #getting unique items in a list in a fast way, courtesy of https://www.peterbe.com/plog/uniqifiers-benchmark
 #use this when extracting names
-# def f5(seq, idfun=None): 
-#    # order preserving
-#    if idfun is None:
-#        def idfun(x): return x
-#    seen = {}
-#    result = []
-#    for item in seq:
-#        marker = idfun(item)
-#        # in old Python versions:
-#        # if seen.has_key(marker)
-#        # but in new ones:
-#        if marker in seen: continue
-#        seen[marker] = 1
-#        result.append(item)
-#    return result
+def f5(seq, idfun=None): 
+   # order preserving
+   if idfun is None:
+       def idfun(x): return x
+   seen = {}
+   result = []
+   for item in seq:
+       marker = idfun(item)
+       # in old Python versions:
+       # if seen.has_key(marker)
+       # but in new ones:
+       if marker in seen: continue
+       seen[marker] = 1
+       result.append(item)
+   return result
 
 #specify the schema.org namespace
 schema=Namespace("http://schema.org/")
@@ -31,6 +33,7 @@ schema.name
 
 #create a list for dictionaries containing the enrichment data
 URIdictlist = []
+alltopictypes = []
 #open the export from OpenRefine
 with open ("important_topics_to_enrich_2017_12_20_03_14_PM_cleaned-tsv_ORexport_2018_03_23_12-18pm.txt") as json_data:
 	topics = json.load(json_data)
@@ -97,9 +100,12 @@ with open ("important_topics_to_enrich_2017_12_20_03_14_PM_cleaned-tsv_ORexport_
 						print(shorttopictype)
 					#add all the topic types to a list
 					shorttopictypelist.append(shorttopictype)
+					alltopictypes.append(shorttopictype)
+
 					#print(shorttopictype)
 					#put the list into the dictionary as the key-value for topic type
 					URIdict["external_link"]["recon_data"]["topic_type"] = shorttopictypelist
+
 					#would like to add a counter here to count how many topics will have at least one type added
 				#not doing this, but this was how I got VIAF names before
 # 				# viafnameslist = []
@@ -131,12 +137,10 @@ with open ("important_topics_to_enrich_2017_12_20_03_14_PM_cleaned-tsv_ORexport_
 				URIdictlist.append(URIdict)
 				#would like to add a counter here to report how many topics are being enriched. should match number of URIs found
 
-# # name = g.value(None, SKOS.prefLabel, any=True)
-# # print(name)
-# # for s, p, o in g:
-# # 	print(s)
+uniquetopictypenames=f5(alltopictypes)
+print(uniquetopictypenames)
 
 #now we'll take the URIdict and make some JSON from it, and write it as a file.
-with open ('VIAF_importantTopics_23March.json', 'w') as f:
+with open ('VIAF_importantTopics_26March.json', 'w') as f:
 	json.dump(URIdictlist, f, sort_keys=True, ensure_ascii=False, indent=4)
 	print("HOORAY, you did it!")
