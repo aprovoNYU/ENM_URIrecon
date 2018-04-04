@@ -4,7 +4,11 @@ import rdflib
 from rdflib import Namespace
 from rdflib.namespace import SKOS, RDFS, RDF
 from collections import Counter
+from datetime import datetime, date, time
 
+
+filetime = datetime.now()
+filetime = filetime.strftime("%Y-%m-%d_%I-%M_%p")
 #getting unique items in a list in a fast way, courtesy of https://www.peterbe.com/plog/uniqifiers-benchmark
 
 def f5(seq, idfun=None): 
@@ -39,7 +43,7 @@ with open ("important_topics_to_enrich_2017_12_20_03_14_PM_cleaned-tsv_ORexport_
 			URIdict = {}
 			#map the basket ID to the terminology used in OpenRefine project
 			basketID = topic["Tct_Id"]
-			#here's the VIAF URI I found through OpenRefine
+			#here's the FAST URI I found through OpenRefine
 			# FAST_URI = topic["FAST_URI"]
 			#need to turn it into a string
 			FAST_URL = str(topic["FAST_URI"])
@@ -49,11 +53,11 @@ with open ("important_topics_to_enrich_2017_12_20_03_14_PM_cleaned-tsv_ORexport_
 			#create a key for external link, whose value is a dictionary we'll fill in a moment
 			URIdict["external_link"] = {}
 			#create link type key in the external link dictionary, value is text "exactMatch"
-			if topic["Wikidata_closeMatch"] == "closeMatch":
+			if topic["FAST_closeMatch"] == "closeMatch":
 				URIdict["external_link"]["link_type"] = "closeMatch"
 			else:
 				URIdict["external_link"]["link_type"] = "exactMatch"			
-			#since this is VIAF data, external link label is FAST
+			#since this is FAST data, external link label is FAST
 			URIdict["external_link"]["label"] = "FAST"
 			#create a key for recon data, which is another dictionary that lives in the external link's dictionary
 			URIdict["external_link"]["recon_data"] = {}
@@ -120,6 +124,6 @@ with open ("important_topics_to_enrich_2017_12_20_03_14_PM_cleaned-tsv_ORexport_
 uniquetopictypenames=f5(alltopictypes)
 print(uniquetopictypenames)
 
-with open ('FAST_importantTopics_26March.json', 'w') as f:
+with open ('FAST_importantTopics_%s.json' %filetime, 'w') as f:
 	json.dump(URIdictlist, f, sort_keys=True, ensure_ascii=False, indent=4)
 	print("HOORAY, you did it!")

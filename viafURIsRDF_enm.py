@@ -4,7 +4,11 @@ import rdflib
 from rdflib import URIRef
 from rdflib import Namespace
 from rdflib.namespace import SKOS, RDFS, RDF
+from datetime import datetime, date, time
 
+
+filetime = datetime.now()
+filetime = filetime.strftime("%Y-%m-%d_%I-%M_%p")
 # to do: timer for how long script takes
 
 #from collections import Counter
@@ -141,6 +145,6 @@ uniquetopictypenames=f5(alltopictypes)
 print(uniquetopictypenames)
 
 #now we'll take the URIdict and make some JSON from it, and write it as a file.
-with open ('VIAF_importantTopics_26March.json', 'w') as f:
+with open ('VIAF_importantTopics_%s.json' %filetime, 'w') as f:
 	json.dump(URIdictlist, f, sort_keys=True, ensure_ascii=False, indent=4)
 	print("HOORAY, you did it!")
