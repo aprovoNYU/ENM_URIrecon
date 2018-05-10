@@ -24,9 +24,23 @@ def f5(seq, idfun=None):
        result.append(item)
    return result
 
+#from https://www.pythoncentral.io/how-to-check-if-a-list-tuple-or-dictionary-is-empty-in-python/
+def is_empty(any_structure):
+    if any_structure:
+        #print('Structure is not empty.')
+        return False
+    else:
+        #print('Structure is empty.')
+        return True
+
 URIdictlist = []
 alltopictypes = []
 topictype_exceptions = []
+#create variables for URI and blank URI field counts
+countOfURIsAdded = 0
+countOfnullURIs = 0
+countOftopictypesAdded = 0
+
 
 with open("schemaPerson_Wikidata_types.txt") as f:
     schemaPerson_list = f.read().splitlines()
@@ -67,10 +81,12 @@ with open ("important_topics_to_enrich_2017_12_20_03_14_PM_cleaned-tsv_ORexport_
 			URIdict["external_link"]["label"] = "Wikidata"
 			URIdict["external_link"]["recon_data"] = {}
 			#print(URIdict)
-			if "None" in Wikidata_URL:
+			if "None" in Wikidata_URL or not Wikidata_URL:
+				countOfnullURIs = countOfnullURIs + 1
 				pass
 			else:
 				URIdict["external_link"]["URL"] = Wikidata_URL
+				countOfURIsAdded = countOfURIsAdded + 1
 				langlist = []
 # # 				# Wikidata_testURL = "https://www.wikidata.org/wiki/Q7330150"
 # # 				# WikidataID = Wikidata_testURL.replace("https://www.wikidata.org/wiki/","")
@@ -97,7 +113,7 @@ with open ("important_topics_to_enrich_2017_12_20_03_14_PM_cleaned-tsv_ORexport_
 
 				# URIdict["external_link"]["recon_data"]["topic_hits"] = uniquewikidatanameslist
 
-				topictypelist = []
+
 				#Wikidata_testURL = "https://www.wikidata.org/wiki/Q7330150"
 				#https://www.wikidata.org/w/api.php?action=wbgetclaims&entity=Q7330150&format=json
 				#WikidataID = Wikidata_testURL.replace("https://www.wikidata.org/wiki/","")
@@ -105,6 +121,7 @@ with open ("important_topics_to_enrich_2017_12_20_03_14_PM_cleaned-tsv_ORexport_
 				r.encoding = "utf-8"
 				Wikidataclaims = json.loads(r.text)
 				try:
+					topictypelist = []
 					topictype = Wikidataclaims["claims"]["P31"][0]["mainsnak"]["datavalue"]["value"]["id"]
 					#print(topictype)
 
@@ -118,19 +135,25 @@ with open ("important_topics_to_enrich_2017_12_20_03_14_PM_cleaned-tsv_ORexport_
 
 					if topictypename in schemaPerson_list:
 						topictypelist.append("schema:Person")
+						countOftopictypesAdded = countOftopictypesAdded + 1
 					elif topictypename in schemaOrganization_list:
 						topictypelist.append("schema:Organization")
+						countOftopictypesAdded = countOftopictypesAdded + 1
 					elif topictypename in schemaEvent_list:
 						topictypelist.append("schema:Event")
+						countOftopictypesAdded = countOftopictypesAdded + 1
 					elif topictypename in schemaPlace_list:
 						topictypelist.append("schema:Place")
+						countOftopictypesAdded = countOftopictypesAdded + 1
 					elif topictypename in schemaCreativeWork_list:
 						topictypelist.append("schema:CreativeWork")
+						countOftopictypesAdded = countOftopictypesAdded + 1
 					else:
 						pass
 #maybe could move this into the if statements?
-					URIdict["external_link"]["recon_data"]["topic_type"] = topictypelist
-					print(URIdict)
+					if is_empty(topictypelist) == False:
+						URIdict["external_link"]["recon_data"]["topic_type"] = topictypelist
+						print(URIdict)
 				except:
 					print("No P31")
 					print(Wikidata_URL)
@@ -153,6 +176,8 @@ with open ("important_topics_to_enrich_2017_12_20_03_14_PM_cleaned-tsv_ORexport_
 uniquetopictypenames=f5(alltopictypes)
 print(uniquetopictypenames)
 print(topictype_exceptions)
+print("blank URI field: ", countOfnullURIs, "| URIs added: ", countOfURIsAdded, "| topic types added: ", countOftopictypesAdded)
+
 #in first pass, comment out code below in order to just print the unique topic names.
 #Then use these to populate the text files that will generate the lists of Wikidata types to map to different schema.org properties
 with open ("Wikidata_importantTopics_%s.json" %filetime, 'w') as f:

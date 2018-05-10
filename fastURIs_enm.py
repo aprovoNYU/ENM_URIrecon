@@ -28,11 +28,24 @@ def f5(seq, idfun=None):
    return result
 
 
+#from https://www.pythoncentral.io/how-to-check-if-a-list-tuple-or-dictionary-is-empty-in-python/
+def is_empty(any_structure):
+    if any_structure:
+        #print('Structure is not empty.')
+        return False
+    else:
+        #print('Structure is empty.')
+        return True
+
 schema=Namespace("http://schema.org/")
 schema.name
 
 URIdictlist = []
 alltopictypes = []
+countOfURIsAdded = 0
+countOfnullURIs = 0
+countOftopictypesAdded = 0
+countoftopictypelistsAdded = 0
 
 with open ("important_topics_to_enrich_2017_12_20_03_14_PM_cleaned-tsv_ORexport_2018_03_23_12-18pm.txt") as json_data:
 	topics = json.load(json_data)
@@ -64,10 +77,13 @@ with open ("important_topics_to_enrich_2017_12_20_03_14_PM_cleaned-tsv_ORexport_
 
 # ###NEED to take the URI, grab JSON or XML; grab names and types, create JSON object with basket id, URL+linksource, topic type, and name(s)
 
-			if "None" in FAST_URL:
+			if "None" in FAST_URL or not FAST_URL:
+				countOfnullURIs = countOfnullURIs + 1
 				pass
 			else:
 				URIdict["external_link"]["URL"] = FAST_URL
+				countOfURIsAdded = countOfURIsAdded + 1				
+
 # FAST_URL = "http://id.worldcat.org/fast/1533194"
 # FASTRDFURL = "http://id.worldcat.org/fast/1533194/rdf.xml"
 				FASTRDFURL = str(FAST_URL)+"/rdf.xml"
@@ -85,10 +101,13 @@ with open ("important_topics_to_enrich_2017_12_20_03_14_PM_cleaned-tsv_ORexport_
 					print(shorttopictype)
 					if shorttopictype != "schema:Intangible":
 						shorttopictypelist.append(shorttopictype)
-
+						countOftopictypesAdded = countOftopictypesAdded + 1
 					alltopictypes.append(shorttopictype)
 
+				
+				if is_empty(shorttopictypelist) == False:
 					URIdict["external_link"]["recon_data"]["topic_type"] = shorttopictypelist
+					countoftopictypelistsAdded = countoftopictypelistsAdded + 1
 
 				#not doing this, but this was how I got FAST names before
 
@@ -123,6 +142,7 @@ with open ("important_topics_to_enrich_2017_12_20_03_14_PM_cleaned-tsv_ORexport_
 # 	print(s)
 uniquetopictypenames=f5(alltopictypes)
 print(uniquetopictypenames)
+print("blank URI field: ", countOfnullURIs, "| URIs added: ", countOfURIsAdded, "| topic types added: ", countOftopictypesAdded, "| topics with at least one type added: ", countoftopictypelistsAdded)
 
 with open ('FAST_importantTopics_%s.json' %filetime, 'w') as f:
 	json.dump(URIdictlist, f, sort_keys=True, ensure_ascii=False, indent=4)

@@ -33,6 +33,9 @@ schema.name
 
 URIdictlist = []
 alltopictypes = []
+#create variables for URI and blank URI field counts
+countOfURIsAdded = 0
+countOfnullURIs = 0
 
 with open ("important_topics_to_enrich_2017_12_20_03_14_PM_cleaned-tsv_ORexport_2018_03_23_12-18pm.txt") as json_data:
 	topics = json.load(json_data)
@@ -62,10 +65,14 @@ with open ("important_topics_to_enrich_2017_12_20_03_14_PM_cleaned-tsv_ORexport_
 
 # # # ###NEED to take the URI, grab JSON or XML; grab names and types, create JSON object with basket id, URL+linksource, topic type, and name(s)
 			#for this round, decided not to grab any data from the LC URIs, so commenting this out.
-			if "None" in LOC_URL:
+			if "None" in LOC_URL or not LOC_URL:
+				#add to count of blanks or nulls in the URI field
+				countOfnullURIs = countOfnullURIs + 1
 				pass
 			else:
 				URIdict["external_link"]["URL"] = LOC_URL
+				#add to count of URIs added to data
+				countOfURIsAdded = countOfURIsAdded + 1
 				#print(LOC_URL)
 			# 	LOCntURL = str(LOC_URL +".skos.nt")
 
@@ -113,7 +120,7 @@ with open ("important_topics_to_enrich_2017_12_20_03_14_PM_cleaned-tsv_ORexport_
 				URIdictlist.append(URIdict)
 # uniquetopictypenames = f5(alltopictypes)
 # print(uniquetopictypenames)
-
+print("blanks: ", countOfnullURIs, "| URIs added: ", countOfURIsAdded)
 with open ('LC_importantTopics_%s.json' %filetime, 'w') as f:
 	json.dump(URIdictlist, f, sort_keys=True, ensure_ascii=False, indent=4)
 	print("HOORAY, you did it!")

@@ -31,6 +31,15 @@ def f5(seq, idfun=None):
        result.append(item)
    return result
 
+#from https://www.pythoncentral.io/how-to-check-if-a-list-tuple-or-dictionary-is-empty-in-python/
+def is_empty(any_structure):
+    if any_structure:
+        #print('Structure is not empty.')
+        return False
+    else:
+        #print('Structure is empty.')
+        return True
+
 #specify the schema.org namespace
 schema=Namespace("http://schema.org/")
 schema.name
@@ -38,6 +47,12 @@ schema.name
 #create a list for dictionaries containing the enrichment data
 URIdictlist = []
 alltopictypes = []
+#create variables for URI and blank URI field counts
+countOfURIsAdded = 0
+countOfnullURIs = 0
+countOftopictypesAdded = 0
+countoftopictypelistsAdded = 0
+
 #open the export from OpenRefine
 with open ("important_topics_to_enrich_2017_12_20_03_14_PM_cleaned-tsv_ORexport_2018_03_23_12-18pm.txt") as json_data:
 	topics = json.load(json_data)
@@ -67,12 +82,14 @@ with open ("important_topics_to_enrich_2017_12_20_03_14_PM_cleaned-tsv_ORexport_
 			URIdict["external_link"]["recon_data"] = {}
 
 			#if there isn't a link, pass		
-			if "None" in VIAF_URL:
+			if "None" in VIAF_URL or not VIAF_URL:
+				countOfnullURIs = countOfnullURIs + 1
 				pass
 			
 			else:
 				#otherwise, the external link is the VIAF URI (the https one)
 				URIdict["external_link"]["URL"] = VIAF_URI
+				countOfURIsAdded = countOfURIsAdded + 1				
 				print(VIAF_URL)
 				#to get the RDFXML, we use the http VIAF_URL and add the suffix
 				VIAFRDFURL = str(VIAF_URL)+"/rdf.xml"
@@ -84,7 +101,7 @@ with open ("important_topics_to_enrich_2017_12_20_03_14_PM_cleaned-tsv_ORexport_
 					print(VIAFRDFURL)
 				#if it doesn't work, print the bad VIAF URL (except I'm accidentally passing blank VIAF_URLs here, so it doesn't work)
 				except:
-					print("This VIAF URI had bad data:" + VIAF_URL)
+					print("This VIAF URI had bad data: " + VIAF_URL)
 					print(VIAFRDFURL)
 					pass				# 	print(o)
 				#create a list for shortened topic types, because there could be more than one
@@ -99,17 +116,20 @@ with open ("important_topics_to_enrich_2017_12_20_03_14_PM_cleaned-tsv_ORexport_
 						shorttopictype = topictype.replace("http://schema.org/", "schema:")
 						print(shorttopictype)
 					#sometimes theere's a productontology type though:
-					elif "productontology" in topictype:
-						shorttopictype = topictype.replace("http://www.productontology.org/id/", "pto:")
-						print(shorttopictype)
+					#elif "productontology" in topictype:
+						# shorttopictype = topictype.replace("http://www.productontology.org/id/", "pto:")
+						# print(shorttopictype)
+						# countOftopictypesAdded = countOftopictypesAdded + 1
 					#add all the topic types to a list
 					shorttopictypelist.append(shorttopictype)
 					alltopictypes.append(shorttopictype)
+					countOftopictypesAdded = countOftopictypesAdded + 1
 
 					#print(shorttopictype)
 					#put the list into the dictionary as the key-value for topic type
+				if is_empty(shorttopictypelist) == False:
 					URIdict["external_link"]["recon_data"]["topic_type"] = shorttopictypelist
-
+					countoftopictypelistsAdded = countoftopictypelistsAdded + 1
 					#would like to add a counter here to count how many topics will have at least one type added
 				#not doing this, but this was how I got VIAF names before
 # 				# viafnameslist = []
@@ -139,11 +159,10 @@ with open ("important_topics_to_enrich_2017_12_20_03_14_PM_cleaned-tsv_ORexport_
 				#the URI dict is a record for each topic record to be enriched
 				print(URIdict)
 				URIdictlist.append(URIdict)
-				#would like to add a counter here to report how many topics are being enriched. should match number of URIs found
 
 uniquetopictypenames=f5(alltopictypes)
 print(uniquetopictypenames)
-
+print("blank URI field: ", countOfnullURIs, "| URIs added: ", countOfURIsAdded, "| topic types added: ", countOftopictypesAdded, "| topics with at least one type added: ", countoftopictypelistsAdded)
 #now we'll take the URIdict and make some JSON from it, and write it as a file.
 with open ('VIAF_importantTopics_%s.json' %filetime, 'w') as f:
 	json.dump(URIdictlist, f, sort_keys=True, ensure_ascii=False, indent=4)
